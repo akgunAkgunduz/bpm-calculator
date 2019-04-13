@@ -23,5 +23,7 @@ h1 {
 }
 
 #speed {
+  display: inline-block;
+  width: 52px;
   font-weight: bold;
 }
