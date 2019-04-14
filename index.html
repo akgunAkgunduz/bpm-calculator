@@ -10,12 +10,13 @@
 <body>
   <div id="container">
     <h1>BPM Calculator</h1>
+
     <div id="inputs">
       <span>If you play </span>
       <select id="groups">
         <option value="2">Twos</option>
         <option value="3">Threes</option>
-        <option value="4" selected>Fours</option>
+        <option value="4">Fours</option>
         <option value="5">Fives</option>
         <option value="6">Sixes</option>
         <option value="7">Sevens</option>
@@ -27,9 +28,30 @@
       <span> at </span>
       <input type="number" id="bpm" value="180" min="20" max="300">
       <span> BPM, the speed will be </span>
-      <span id="speed">12.000 </span>
+      <span id="speed">6.000</span>
       <span>notes per second.</span>
     </div>
+
+    <h3>Speed Equivalents BPM Table</h3>
+    <table id="bpm-table">
+      <thead>
+        <tr>
+          <th>2s</th>
+          <th>3s</th>
+          <th>4s</th>
+          <th>5s</th>
+          <th>6s</th>
+          <th>7s</th>
+          <th>8s</th>
+          <th>9s</th>
+          <th>10s</th>
+          <th>11s</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
   </div>
   
   <script src="js/main.js"></script>
