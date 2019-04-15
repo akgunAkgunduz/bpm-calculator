@@ -51,6 +51,8 @@ function initApp() {
   } else {
     groups.value = defaultSettings.groups
   }
+
+  speed.innerHTML = calculateSpeed(groups.options[groups.selectedIndex].value, bpm.value).toFixed(3)
 }
 
 bpm.addEventListener('input', (e) => {
