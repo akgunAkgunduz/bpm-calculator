@@ -8,7 +8,7 @@ const defaultSettings = {
   groups: 4
 }
 
-function calculate(groupValue, bpmValue) {
+function calculateSpeed(groupValue, bpmValue) {
   return bpmValue * groupValue / 60
 }
 
@@ -55,13 +55,13 @@ function initApp() {
 
 bpm.addEventListener('input', (e) => {
   localStorage.setItem('bpmCalculatorBpm', e.target.value)
-  speed.innerHTML = calculate(groups.options[groups.selectedIndex].value, e.target.value).toFixed(3)
+  speed.innerHTML = calculateSpeed(groups.options[groups.selectedIndex].value, e.target.value).toFixed(3)
   drawTable()
 })
 
 groups.addEventListener('input', (e) => {
   localStorage.setItem('bpmCalculatorGroups', e.target.value)
-  speed.innerHTML = calculate(groups.options[groups.selectedIndex].value, bpm.value).toFixed(3)
+  speed.innerHTML = calculateSpeed(groups.options[groups.selectedIndex].value, bpm.value).toFixed(3)
   drawTable()
 })
 
