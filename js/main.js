@@ -1,17 +1,21 @@
+// UI elements
 const groups = document.querySelector('#groups')
 const bpm = document.querySelector('#bpm')
 const speed = document.querySelector('#speed')
 const table = document.querySelector('#bpm-table')
 
+// Default settings
 const defaultSettings = {
   bpm: 180,
   groups: 4
 }
 
+// Function for playing speed calculation
 function calculateSpeed(groupValue, bpmValue) {
   return bpmValue * groupValue / 60
 }
 
+// Function for drawing BPM equivalents table
 function drawTable() {
   const bpmValue = parseInt(bpm.value)
   const groupValue = parseInt(groups.options[groups.selectedIndex].value)  
@@ -39,6 +43,7 @@ function drawTable() {
   }
 }
 
+// Function for app initialization
 function initApp() {
   if (localStorage.bpmCalculatorBpm) {
     bpm.value = parseInt(localStorage.bpmCalculatorBpm)
@@ -55,6 +60,7 @@ function initApp() {
   speed.innerHTML = calculateSpeed(groups.options[groups.selectedIndex].value, bpm.value).toFixed(3)
 }
 
+// Event listeners
 bpm.addEventListener('input', (e) => {
   localStorage.setItem('bpmCalculatorBpm', e.target.value)
   speed.innerHTML = calculateSpeed(groups.options[groups.selectedIndex].value, e.target.value).toFixed(3)
